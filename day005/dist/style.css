@@ -1,0 +1,275 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+:root{
+  --teal: #42a7a1;
+  --gray: #808080;
+  --red: #fa7373;
+  --blue: #7ba2ff;
+}
+*{
+ margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+}
+.container{
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal);
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.3);
+}
+
+.statistics-card{
+  width: 17rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 0.2rem;
+  box-shadow: 8px 8px 15px 0 rgba(0,0,0,0.3);
+}
+
+.heading{
+  width: 100%;
+  height: 26%;
+  background: #f1ba64;
+  border-radius: 0.2rem 0.2rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  color: white;
+}
+
+.weekly-report{
+  text-align: left;
+}
+.revenue{
+  text-align: right;
+}
+
+.heading-bigger-text{
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.heading-smaller-text{
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.charts-container{
+  width: 100%;
+  height: 74%;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.legends{
+  align-self: flex-end;
+  font-size: 0.6rem;
+  color: #36454f;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legend{
+  display: flex;
+  align-items: center;
+}
+
+.indicator{
+  width: 0.65rem;
+  height: 0.2rem;
+  border-radius: 0.2rem;
+  margin-right: 0.5rem;
+}
+.views-indicator{
+  background: var(--red);
+}
+.purchases-indicator{
+  background: var(--blue);
+}
+
+.charts{
+  height: 100%;
+  margin: 1rem 0.2rem 0.5rem;
+  position: relative;
+}
+
+.line{
+  width: 100%;
+  height: 0.5px;
+  background: var(--gray);
+  opacity: 0.15;
+  position: absolute;
+}
+.line1{
+  top: 0;
+}
+.line2{
+  top: 50%;
+}
+.line3{
+  bottom: 0;
+}
+
+.line-chart svg{
+  position: absolute;
+}
+
+.line-chart svg polyline{
+  fill: none;
+  stroke-width: 2px;
+}
+
+.views-chart svg{
+  stroke: var(--red);
+}
+.purchases-chart svg{
+  stroke: var(--blue);
+}
+
+.points{
+  
+}
+
+div[class^="point"]{
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  transform: translate(-25%, -25%);
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.views-chart .points div[class^="point"]{
+    background: var(--red);
+}
+
+.purchases-chart .points div[class^="point"]{
+    background: var(--blue);
+}
+
+.views-chart .point1{
+  top: 46px;
+  left: 4px;
+}
+.views-chart .point2{
+  top: 12px;
+  left: 48px;
+}
+.views-chart .point3{
+  top: 23px;
+  left: 87px;
+}
+.views-chart .point4{
+  top: 11px;
+  left: 126px;
+}
+.views-chart .point5{
+  top: 38px;
+  left: 166px;
+}
+.views-chart .point6{
+  top: 48px;
+  left: 203px;
+}
+.views-chart .point7{
+  top: 19px;
+  left: 245px;
+}
+
+.purchases-chart .point1{
+  top: 61px;
+  left: 4px;
+}
+.purchases-chart .point2{
+  top: 50px;
+  left: 48px;
+}
+.purchases-chart .point3{
+  top: 65px;
+  left: 87px;
+}
+.purchases-chart .point4{
+  top: 55px;
+  left: 126px;
+}
+.purchases-chart .point5{
+  top: 61px;
+  left: 166px;
+}
+.purchases-chart .point6{
+  top: 74px;
+  left: 203px;
+}
+.purchases-chart .point7{
+  top: 64px;
+  left: 245px;
+}
+
+.tooltip{
+  font-size: 0.7rem;
+  color: white;
+  padding: 0.4rem;
+  position: absolute;
+  transform: translate(-40%, -1.8rem);
+  border-radius: 0.15rem;
+  visibility: hidden;
+  opacity: 0.5;
+}
+.views-chart .tooltip{
+  background: var(--red);
+}
+.purchases-chart .tooltip{
+  background: var(--blue);
+}
+
+.tooltip::after{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 0.7rem;
+  height: 0.35rem;
+  left: 50%;
+  bottom: -18%;
+  transform: translatex(-50%);
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+}
+
+.views-chart .tooltip::after{
+  background: var(--red);
+}
+.purchases-chart .tooltip::after{
+    background: var(--blue);
+}
+
+.line-chart div[class^="point"]:hover > .tooltip{
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-40%, -2.15rem);
+  transition: 0.4s all ease-out;
+}
+
+
+.weekdays{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  font-weight: 300;
+  color: 	var(--gray);
+}
