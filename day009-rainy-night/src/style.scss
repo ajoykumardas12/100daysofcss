@@ -1,0 +1,314 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,200);
+
+$dark: #1a2238;
+$moon: #f6edbd;
+$moon-crater: #ece1a8;
+$raindrop: #7fc1f9;
+$forest: #303c5d;
+$darker-forest: #26314F;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+}
+.container {
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.scenery {
+  width: 100%;
+  height: 75%;
+  background: $dark;
+  position: relative;
+  overflow: hidden;
+}
+
+.forest-circle {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: $forest;
+  z-index: 20;
+}
+.forest-circle-1 {
+  @extend .forest-circle;
+  width: 25rem;
+  height: 20rem;
+  left: -25%;
+  bottom: -70%;
+  background: $darker-forest;
+}
+.forest-circle-2 {
+  @extend .forest-circle;
+  width: 22rem;
+  height: 20rem;
+  left: 40%;
+  bottom: -70%;
+  background: $darker-forest;
+}
+.forest-circle-3 {
+  @extend .forest-circle;
+  left: 65%;
+  bottom: -60%;
+}
+.forest-circle-4 {
+  @extend .forest-circle;
+  width: 18rem;
+  left: 20%;
+  bottom: -50%;
+}
+.forest-circle-5 {
+  @extend .forest-circle;
+  left: -25%;
+  bottom: -60%;
+}
+
+.moon {
+  position: absolute;
+  left: 15%;
+  top: 13%;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: $moon;
+  box-shadow: 0 0 12px 1px $moon;
+  overflow: hidden;
+  animation: moon-coming-up 1s ease-out;
+}
+.moon-crater {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: $moon-crater;
+  opacity: 0.7;
+}
+.moon-crater-1 {
+  @extend .moon-crater;
+  width: 12px;
+  height: 12px;
+  left: 4px;
+  top: 10px;
+}
+.moon-crater-2 {
+  @extend .moon-crater;
+  width: 10px;
+  height: 10px;
+  left: 24px;
+  top: 29px;
+}
+.moon-crater-3{
+  @extend .moon-crater;
+  left: 39px;
+  top: 6px;
+}
+.moon-crater-4 {
+  @extend .moon-crater;
+  width: 4px;
+  height: 4px;
+  left: 50px;
+  top: 28px;
+}
+.moon-crater-5 {
+  @extend .moon-crater;
+  width: 5px;
+  height: 5px;
+  left: 20px;
+  top: 55px;
+}
+.moon-crater-6 {
+  @extend .moon-crater;
+  left: 10px;
+  top: 50px;
+}
+.moon-crater-7 {
+  @extend .moon-crater;
+  left: 45px;
+  top: 45px;
+}
+
+@for $i from 0 through 10 {
+  .medium-raindrop-#{$i}{
+    position: absolute;
+    left: calc(#{$i}*35px);
+    bottom: -20px;
+    z-index: 30;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $raindrop;
+    opacity: 0.7;
+    animation: raining (1.2 + random(2) / 10) + s linear (random(50) / 25) + s infinite;
+    
+    &:after{
+      position: absolute;
+			content: '';
+			display: block;
+			top: -2.5px;
+			left: 1px;
+			width: 3px;
+			height: 3px;
+			background: $raindrop;
+			border-radius: 3px;
+    }
+    &:before{
+      position: absolute;
+			content: '';
+			display: block;
+			top: -4.5px;
+			left: 2px;
+			width: 2px;
+			height: 8px;
+			background: $raindrop;
+			border-radius: 3px;
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  .small-raindrop-#{$i}{
+    position: absolute;
+    left: calc(#{$i}*35px);
+    bottom: -20px;
+    z-index: 30;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: $raindrop;
+    opacity: 0.5;
+    animation: raining (0.9 + random(2) / 10) + s linear (random(50) / 25) + s infinite;
+    
+    &:after{
+      position: absolute;
+			content: '';
+			display: block;
+			top: -2.5px;
+			left: 0.5px;
+			width: 2px;
+			height: 2px;
+			background: $raindrop;
+			border-radius: 3px;
+    }
+    &:before{
+      position: absolute;
+			content: '';
+			display: block;
+			top: -4.5px;
+			left: 1px;
+			width: 1px;
+			height: 8px;
+			background: $raindrop;
+			border-radius: 3px;
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  .big-raindrop-#{$i}{
+    position: absolute;
+    left: calc(#{$i}*35px);
+    bottom: -20px;
+    z-index: 30;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $raindrop;
+    animation: raining (0.7 + random(2) / 10) + s linear (random(50) / 25) + s infinite;
+    
+    &:after{
+      position: absolute;
+			content: '';
+			display: block;
+			top: -2.5px;
+			left: 1.2px;
+			width: 6px;
+			height: 6px;
+			background: $raindrop;
+			border-radius: 3px;
+    }
+    &:before{
+      position: absolute;
+			content: '';
+			display: block;
+			top: -4.5px;
+			left: 2.5px;
+			width: 3px;
+			height: 8px;
+			background: $raindrop;
+			border-radius: 3px;
+    }
+  }
+}
+
+
+.weather-data {
+  width: 100%;
+  height: 25%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: $dark;
+}
+.temperature {
+  font-size: 3rem;
+  font-weight: 200;
+}
+.wind-and-humidity {
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+.forecast {
+  margin-left: auto;
+  margin-right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  text-align: right;
+}
+.forecast-day {
+  font-weight: 300;
+}
+
+
+@keyframes moon-coming-up{
+  0%{
+    left: 12%;
+    top: 90%;
+  }
+  100%{
+    left: 15%;
+    top: 13%;
+  }
+}
+
+@keyframes raining {
+  0%{
+    transform: translate3d(15px, -300px, 0) scaleX(1) scaleY(1) rotate(17deg);
+  }
+  80%{
+    transform: translate3d(0, -20px, 0) scaleX(1) scaleY(1) rotate(17deg);
+  }
+  100%{
+    transform: translate3d(0, -16px, 0) scaleX(2) scaleY(0) rotate(0deg);
+  }
+}
