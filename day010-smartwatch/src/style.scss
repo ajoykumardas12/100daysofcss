@@ -1,0 +1,157 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,200);
+
+$dark: #4c4c4c;
+$darker: #3a3a3a;
+$darkest: #242424;
+$red: #f85b5b;
+$light: #d3d3d3;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+}
+.container {
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background: $dark;
+}
+
+.watch {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: $darker;
+  position: relative;
+}
+
+.dial {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  background: $darkest;
+}
+
+.spin {
+  position: absolute;
+  left: 0.5rem;
+  top: -0.2rem;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  & svg {
+    width: 12.8rem;
+    height: 12.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: none;
+    
+    & circle {
+      stroke-width: 3px;
+      stroke: $red;
+      stroke-linecap: round;
+      stroke-dasharray: 590;
+      stroke-dashoffset: 590;
+      animation: seconds-spin 2s linear infinite;
+    }
+  }
+}
+
+.seconds{
+  // border: 1px solid red;
+  position: absolute;
+  top: 49.8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11rem;
+}
+@for $i from 0 through 30 {
+  .points-set-#{$i}{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: rotate(calc(#{$i}*6deg));
+  }
+ }
+.point{
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: $light;
+}
+
+.watch-data{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.date{
+  text-transform: uppercase;
+}
+
+.time{
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+
+.health div{
+  display: inline;
+}
+
+.heartrate{
+  margin-right: 0.4rem;
+}
+
+.fa-heart{
+  font-size: 0.7rem;
+  color: $red;
+  animation: beat 1s linear infinite;
+}
+
+
+@keyframes seconds-spin{
+  0%, 100%{
+    stroke-dashoffset: 590;
+  }
+  50%{
+    stroke-dashoffset: 0;
+  }
+  50.001%{
+    stroke-dashoffset: 1180;
+  }
+}
+
+@keyframes beat{
+  0%, 100%{
+    transform: scale(0.8);
+  }
+  50%{
+    transform: scale(1);
+  }
+}

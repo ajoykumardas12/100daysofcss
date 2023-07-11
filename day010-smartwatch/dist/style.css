@@ -1,0 +1,388 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,200);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+}
+
+.container {
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background: #4c4c4c;
+}
+
+.watch {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: #3a3a3a;
+  position: relative;
+}
+
+.dial {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  background: #242424;
+}
+
+.spin {
+  position: absolute;
+  left: 0.5rem;
+  top: -0.2rem;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.spin svg {
+  width: 12.8rem;
+  height: 12.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: none;
+}
+.spin svg circle {
+  stroke-width: 3px;
+  stroke: #f85b5b;
+  stroke-linecap: round;
+  stroke-dasharray: 590;
+  stroke-dashoffset: 590;
+  animation: seconds-spin 2s linear infinite;
+}
+
+.seconds {
+  position: absolute;
+  top: 49.8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11rem;
+}
+
+.points-set-0 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(0*6deg));
+}
+
+.points-set-1 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(1*6deg));
+}
+
+.points-set-2 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(2*6deg));
+}
+
+.points-set-3 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(3*6deg));
+}
+
+.points-set-4 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(4*6deg));
+}
+
+.points-set-5 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(5*6deg));
+}
+
+.points-set-6 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(6*6deg));
+}
+
+.points-set-7 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(7*6deg));
+}
+
+.points-set-8 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(8*6deg));
+}
+
+.points-set-9 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(9*6deg));
+}
+
+.points-set-10 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(10*6deg));
+}
+
+.points-set-11 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(11*6deg));
+}
+
+.points-set-12 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(12*6deg));
+}
+
+.points-set-13 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(13*6deg));
+}
+
+.points-set-14 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(14*6deg));
+}
+
+.points-set-15 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(15*6deg));
+}
+
+.points-set-16 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(16*6deg));
+}
+
+.points-set-17 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(17*6deg));
+}
+
+.points-set-18 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(18*6deg));
+}
+
+.points-set-19 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(19*6deg));
+}
+
+.points-set-20 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(20*6deg));
+}
+
+.points-set-21 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(21*6deg));
+}
+
+.points-set-22 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(22*6deg));
+}
+
+.points-set-23 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(23*6deg));
+}
+
+.points-set-24 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(24*6deg));
+}
+
+.points-set-25 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(25*6deg));
+}
+
+.points-set-26 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(26*6deg));
+}
+
+.points-set-27 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(27*6deg));
+}
+
+.points-set-28 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(28*6deg));
+}
+
+.points-set-29 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(29*6deg));
+}
+
+.points-set-30 {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: rotate(calc(30*6deg));
+}
+
+.point {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #d3d3d3;
+}
+
+.watch-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.date {
+  text-transform: uppercase;
+}
+
+.time {
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+
+.health div {
+  display: inline;
+}
+
+.heartrate {
+  margin-right: 0.4rem;
+}
+
+.fa-heart {
+  font-size: 0.7rem;
+  color: #f85b5b;
+  animation: beat 1s linear infinite;
+}
+
+@keyframes seconds-spin {
+  0%, 100% {
+    stroke-dashoffset: 590;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  50.001% {
+    stroke-dashoffset: 1180;
+  }
+}
+@keyframes beat {
+  0%, 100% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
